@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
-import { ShieldHeart, AlertTriangle, Eye, EyeOff } from 'lucide-react'
+import { ShieldCheck, AlertTriangle, Eye, EyeOff } from 'lucide-react'
 
 export default function LoginPage() {
   const [email, setEmail] = useState('')
@@ -32,7 +32,7 @@ export default function LoginPage() {
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-red-600 rounded-full mb-4">
-            <ShieldHeart className="w-8 h-8 text-white" />
+            <ShieldCheck className="w-8 h-8 text-white" />
           </div>
           <h1 className="text-2xl font-semibold text-slate-900">ReuniFamilia</h1>
           <p className="text-slate-500 mt-1 text-sm">Sistema de Emergencia Venezuela · Acceso Autorizado</p>

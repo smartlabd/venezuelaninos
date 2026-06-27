@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import {
-  ShieldHeart, LayoutDashboard, Users, Heart,
+  ShieldCheck, LayoutDashboard, Users, Heart,
   Building2, ClipboardList, UserCog, ChevronRight
 } from 'lucide-react'
 import { ROL_LABELS, PERMISOS } from '@/lib/utils/roles'
@@ -35,7 +35,7 @@ export default function Sidebar({ usuario }: SidebarProps) {
       <div className="p-5 border-b border-slate-700">
         <div className="flex items-center gap-3">
           <div className="w-9 h-9 bg-red-600 rounded-lg flex items-center justify-center flex-shrink-0">
-            <ShieldHeart className="w-5 h-5 text-white" />
+            <ShieldCheck className="w-5 h-5 text-white" />
           </div>
           <div>
             <p className="font-semibold text-sm">ReuniFamilia</p>
