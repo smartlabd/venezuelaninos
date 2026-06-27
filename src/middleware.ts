@@ -21,7 +21,8 @@ export async function middleware(request: NextRequest) {
     }
   )
 
-  const { data: { user } } = await supabase.auth.getUser()
+  const { data: { session } } = await supabase.auth.getSession()
+  const user = session?.user ?? null
 
   if (request.nextUrl.pathname.startsWith('/login')) {
     if (user) return NextResponse.redirect(new URL('/', request.url))
