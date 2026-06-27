@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { ArrowLeft, Edit, Heart, FileText } from 'lucide-react'
 import { getNombreCompleto, formatFecha, formatRelativo } from '@/lib/utils/format'
 import { ESTADO_NINO_COLORS, ESTADO_NINO_LABELS, URGENCIA_COLORS, URGENCIA_LABELS, ROL_LABELS } from '@/lib/utils/roles'
+import type { Rol } from '@/lib/types/database'
 
 export default async function NinoPage({ params }: { params: { id: string } }) {
   const supabase = await createServerSupabaseClient()
@@ -272,7 +273,7 @@ export default async function NinoPage({ params }: { params: { id: string } }) {
               <div>
                 <p className="text-xs text-slate-400">Registrado por</p>
                 <p className="text-xs text-slate-700 font-medium">{registradoPor?.nombre_completo}</p>
-                <p className="text-xs text-slate-400">{registradoPor?.rol ? ROL_LABELS[registradoPor.rol as any] : ''}</p>
+                <p className="text-xs text-slate-400">{registradoPor?.rol ? ROL_LABELS[registradoPor.rol as Rol] : ''}</p>
               </div>
               <div>
                 <p className="text-xs text-slate-400">Fecha de ingreso</p>
